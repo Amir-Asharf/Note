@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // تأكد من استيراد GetX
+import 'package:get/get.dart'; 
 import 'package:notes_app/components/customtextfieldadd.dart';
 
 class EditCategory extends StatefulWidget {
@@ -45,7 +45,7 @@ class _EditCategoryState extends State<EditCategory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Category".tr), // الترجمة هنا
+        title: Text("Edit Category".tr), 
       ),
       body: Form(
           key: formstate,
@@ -62,11 +62,11 @@ class _EditCategoryState extends State<EditCategory> {
                       padding:
                           EdgeInsets.symmetric(vertical: 20, horizontal: 25),
                       child: customtextformadd(
-                        hinttext: "Enter Category Name".tr, // الترجمة هنا
+                        hinttext: "Enter Category Name".tr, 
                         mycontroller: name,
                         validator: (val) {
                           if (val == "") {
-                            return "can’t be Embty".tr; // الترجمة هنا
+                            return "can’t be Embty".tr; 
                           }
                         },
                         mycotroller: name,
@@ -81,7 +81,7 @@ class _EditCategoryState extends State<EditCategory> {
                       onPressed: () {
                         editCategory();
                       },
-                      child: Text("Save".tr), // الترجمة هنا
+                      child: Text("Save".tr), 
                     ),
                   ],
                 )),
