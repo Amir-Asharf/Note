@@ -16,7 +16,6 @@ class _AddcategoryState extends State<Addcategory> {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
   TextEditingController name = TextEditingController();
 
-  // تعريف مرجع قاعدة البيانات
   final CollectionReference categories =
       FirebaseFirestore.instance.collection('categories');
   bool isloading = false;
