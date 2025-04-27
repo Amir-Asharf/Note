@@ -19,11 +19,10 @@ class SettingsController extends GetxController {
   Future<void> _loadSettings() async {
     _prefs = await SharedPreferences.getInstance();
 
-    // Load language
     _language.value = _prefs.getString('language') ?? 'en';
     Get.updateLocale(Locale(_language.value));
 
-    // Load theme mode
+
     final savedThemeMode = _prefs.getString('theme_mode') ?? 'system';
     switch (savedThemeMode) {
       case 'light':
