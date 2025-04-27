@@ -5,7 +5,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:notes_app/components/textformfield.dart';
 import 'package:path/path.dart';
 
-// ignore: camel_case_types
+
 class login extends StatefulWidget {
   const login({super.key});
 
@@ -13,7 +13,7 @@ class login extends StatefulWidget {
   State<login> createState() => _loginState();
 }
 
-// ignore: camel_case_types
+
 class _loginState extends State<login> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -21,23 +21,23 @@ class _loginState extends State<login> {
   bool isloading = false;
 
   Future signInWithGoogle() async {
-    // Trigger the authentication flow
+
     final GoogleSignInAccount? googleUser = await GoogleSignIn(
       serverClientId:
           "271765655815-gjiv3dceu3un32fjv0hlo8c7iihaags5.apps.googleusercontent.com",
     ).signIn();
 
-    // Obtain the auth details from the request
+
     final GoogleSignInAuthentication? googleAuth =
         await googleUser?.authentication;
 
-    // Create a new credential
+
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth?.accessToken,
       idToken: googleAuth?.idToken,
     );
 
-    // Once signed in, return the UserCredential
+
     await FirebaseAuth.instance.signInWithCredential(credential);
     Navigator.of(context as BuildContext).pushReplacementNamed("home");
   }
