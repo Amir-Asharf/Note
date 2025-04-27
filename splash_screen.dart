@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // انتظار 2 ثانية ثم التحقق من حالة تسجيل الدخول
+
     Future.delayed(Duration(seconds: 2), () {
       if (FirebaseAuth.instance.currentUser != null) {
         Navigator.of(context).pushReplacementNamed("homebage");
