@@ -14,9 +14,9 @@ class homebage extends StatefulWidget {
 }
 
 class _homebageState extends State<homebage> {
-  // البيانات الأصلية
+
   List<QueryDocumentSnapshot> originalData = [];
-  // البيانات المعروضة (بعد الفلترة)
+
   List<QueryDocumentSnapshot> displayedData = [];
   TextEditingController searchController = TextEditingController();
   bool isloading = true;
@@ -33,14 +33,14 @@ class _homebageState extends State<homebage> {
     super.dispose();
   }
 
-  // دالة البحث
+  
   void filterCategories(String query) {
     setState(() {
       if (query.isEmpty) {
-        // إذا كان البحث فارغاً، نعرض كل البيانات
+
         displayedData = List.from(originalData);
       } else {
-        // البحث في البيانات الأصلية
+ 
         displayedData = originalData.where((doc) {
           String name = doc['name'].toString().toLowerCase();
           return name.contains(query.toLowerCase());
@@ -49,21 +49,21 @@ class _homebageState extends State<homebage> {
     });
   }
 
-  // دالة جلب البيانات
+
   Future<void> getCategories() async {
     try {
       setState(() {
         isloading = true;
       });
 
-      // التحقق من تسجيل الدخول
+
       User? currentUser = FirebaseAuth.instance.currentUser;
       if (currentUser == null) {
         Navigator.of(context).pushReplacementNamed("login");
         return;
       }
 
-      // جلب البيانات من Firestore
+
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
           .collection("categories")
           .where("id", isEqualTo: currentUser.uid)
@@ -71,7 +71,7 @@ class _homebageState extends State<homebage> {
 
       if (mounted) {
         setState(() {
-          // تحديث القوائم
+  
           originalData = querySnapshot.docs;
           displayedData = List.from(originalData);
           isloading = false;
@@ -97,7 +97,7 @@ class _homebageState extends State<homebage> {
         backgroundColor: Color.fromARGB(255, 0, 174, 255),
         onPressed: () async {
           await Navigator.of(context).pushNamed("Addcategory");
-          getCategories(); // تحديث البيانات بعد الإضافة
+          getCategories(); 
         },
         child: Icon(Icons.note_alt_outlined),
       ),
@@ -110,7 +110,7 @@ class _homebageState extends State<homebage> {
           ? Center(child: CircularProgressIndicator())
           : Column(
               children: [
-                // حقل البحث
+       
                 Padding(
                   padding: const EdgeInsets.all(15),
                   child: Row(
@@ -149,7 +149,7 @@ class _homebageState extends State<homebage> {
                     ],
                   ),
                 ),
-                // عرض الفئات
+   
                 Expanded(
                   child: displayedData.isEmpty
                       ? Center(
