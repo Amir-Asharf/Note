@@ -4,7 +4,7 @@ class Mylocale implements Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         "ar": {
-          // Navigation & Titles
+
           "Homebage": "الصفحة الرئيسية",
           "All Notes": "كل الملاحظات",
           "Add Category": "إضافة فئة",
@@ -14,7 +14,7 @@ class Mylocale implements Translations {
           "Noteview": "عرض الملاحظات",
           "Add category": "إضافة فئة",
 
-          // Actions
+
           "Add": "إضافة",
           "Edit": "تعديل",
           "Delete": "حذف",
@@ -28,7 +28,7 @@ class Mylocale implements Translations {
           "Retry": "إعادة المحاولة",
           "Close": "اغلاق",
 
-          // Form Labels & Hints
+         
           "Enter Category Name": "أدخل اسم الفئة",
           "Enter Your Note": "أدخل ملاحظتك",
           "Enter cover Name": "أدخل اسم الفئة",
@@ -39,13 +39,13 @@ class Mylocale implements Translations {
           "No categories": "لا يوجد فئات",
           "No results found": "لا يوجد نتائج",
 
-          // Validation Messages
+
           "can’t be Embty": "لا يمكن أن يكون فارغاً",
 
-          // Dialog Messages
+      
           "Choose what you want": "اختر ما تريد",
 
-          // Settings & Preferences
+
           "Language": "اللغة",
           "Account": "الحساب",
           "User Information": "معلومات المستخدم",
@@ -54,7 +54,7 @@ class Mylocale implements Translations {
           "English": "الإنجليزية",
           "Dark Mode": "الوضع الداكن",
 
-          // Auth Messages
+
           "login to continue using the App":
               "سجل دخول للاستمرار في استخدام التطبيق",
           "signup to continue using the App":
@@ -65,13 +65,13 @@ class Mylocale implements Translations {
           "OR Login with": "أو سجل دخول باستخدام",
           "Login with Google": "تسجيل الدخول باستخدام جوجل",
 
-          // Search
+
           "Search categories...": "بحث",
           "are you sure about the deleting process?":
               "هل أنت متأكد من عملية الحذف؟",
         },
         "en": {
-          // Navigation & Titles
+
           "Homebage": "Homebage",
           "All Notes": "All Notes",
           "Add Category": "Add Category",
@@ -80,7 +80,7 @@ class Mylocale implements Translations {
           "Edit NOTE": "Edit Note",
           "Noteview": "Note View",
 
-          // Actions
+    
           "Add": "Add",
           "Edit": "Edit",
           "Delete": "Delete",
@@ -94,7 +94,7 @@ class Mylocale implements Translations {
           "Retry": "Retry",
           "Close": "Close",
 
-          // Form Labels & Hints
+
           "Enter Category Name": "Enter Category Name",
           "Enter Your Note": "Enter your note",
           "Username": "Username",
@@ -103,13 +103,13 @@ class Mylocale implements Translations {
           "Confirm Password": "Confirm Password",
           "Enter cover Name": "Enter cover Name",
 
-          // Validation Messages
+      
           "can’t be Embty": "can’t be Embty",
 
-          // Dialog Messages
+      
           "Choose what you want": "Choose what you want",
 
-          // Settings & Preferences
+       
           "Language": "Language",
           "Choose Language": "Choose Language",
           "Arabic": "Arabic",
@@ -119,7 +119,7 @@ class Mylocale implements Translations {
           "No categories": "No categories",
           "No results found": "No results found",
 
-          // Auth Messages
+     
           "login to continue using the App": "Login to continue using the app",
           "signup to continue using the App":
               "Sign up to continue using the app",
@@ -131,7 +131,7 @@ class Mylocale implements Translations {
           "are you sure about the deleting process?":
               "Are you sure about the deleting process?",
 
-          // Search
+         
           "Search categories...": "Search categories...",
         },
       };
