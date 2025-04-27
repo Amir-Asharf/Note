@@ -47,7 +47,7 @@ class _NoteviewState extends State<Noteview> {
             },
             child: Icon(Icons.add)),
         appBar: AppBar(
-            title: Center(child: Text("Noteview".tr)), // الترجمة هنا
+            title: Center(child: Text("Noteview".tr)), 
             actions: []),
         body: WillPopScope(
             child: isloading == true
@@ -69,16 +69,16 @@ class _NoteviewState extends State<Noteview> {
                             title: 'error'.tr,
                             titleTextStyle: TextStyle(
                               color: Color.fromARGB(255, 0, 174, 255),
-                            ), // الترجمة هنا
+                            ),
                             desc: 'are you sure about the deleting process?'.tr,
                             descTextStyle: TextStyle(
                               color: Color.fromARGB(255, 0, 174, 255),
-                            ), // الترجمة هنا
+                            ), 
                             btnCancelColor: Color.fromARGB(255, 0, 174, 255),
                             btnCancelText: 'cancel'.tr,
                             btnOkColor: Color.fromARGB(
-                                255, 0, 174, 255), // إضافة ترجمة لزر الإلغاء
-                            btnOkText: 'ok'.tr, // إضافة ترجمة لزر التأكيد
+                                255, 0, 174, 255),
+                            btnOkText: 'ok'.tr, 
                             btnCancelOnPress: () async {},
                             btnOkOnPress: () async {
                               await FirebaseFirestore.instance
