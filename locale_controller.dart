@@ -12,7 +12,7 @@ class Mylocalecontroller extends GetxController {
     loadSavedLanguage();
   }
 
-  // تحميل اللغة المحفوظة
+
   Future<void> loadSavedLanguage() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -31,7 +31,7 @@ class Mylocalecontroller extends GetxController {
         Get.updateLocale(initialLang!);
       }
 
-      // تحميل حالة الثيم
+
       isDarkMode = prefs.getBool('isDarkMode') ?? false;
       _updateTheme();
     } catch (e) {
@@ -41,7 +41,7 @@ class Mylocalecontroller extends GetxController {
     }
   }
 
-  // تغيير اللغة
+
   Future<void> changeLang(String langCode) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -56,7 +56,7 @@ class Mylocalecontroller extends GetxController {
     }
   }
 
-  // تبديل الثيم
+
   Future<void> toggleDarkMode() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -68,7 +68,7 @@ class Mylocalecontroller extends GetxController {
     }
   }
 
-  // تحديث الثيم
+
   void _updateTheme() {
     if (isDarkMode) {
       Get.changeTheme(Themes.customDarkTheme);
