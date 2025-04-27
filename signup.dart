@@ -204,21 +204,21 @@ class _signupState extends State<signup> {
               onPressed: () async {
                 if (formstate.currentState!.validate()) {
                   try {
-                    // إنشاء حساب عبر البريد الإلكتروني وكلمة المرور
+            
                     final credential = await FirebaseAuth.instance
                         .createUserWithEmailAndPassword(
                             email: email.text, password: password.text);
 
-                    // تحديث displayName بعد التسجيل
+                
                     await credential.user?.updateProfile(
-                      displayName: username.text, // تعيين اسم المستخدم
+                      displayName: username.text, 
                     );
 
-                    // إرسال التحقق عبر البريد الإلكتروني
+                 
                     await FirebaseAuth.instance.currentUser!
                         .sendEmailVerification();
 
-                    // الانتقال إلى صفحة تسجيل الدخول بعد إنشاء الحساب
+                 
                     Navigator.of(context)
                         .pushNamedAndRemoveUntil("login", (route) => false);
                   } on FirebaseAuthException catch (e) {
